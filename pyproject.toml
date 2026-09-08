@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-bigquery"
+version = "0.1.0"
+description = "A Django database backend for querying Google BigQuery with Django ORM syntax."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "BSD-3-Clause"
+dependencies = [
+    "Django>=4.2,<6.1",
+    "google-cloud-bigquery>=3.0"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8",
+    "pytest-django>=4.8"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
